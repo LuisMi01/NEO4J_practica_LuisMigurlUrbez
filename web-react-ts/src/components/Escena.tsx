@@ -1,27 +1,24 @@
 import { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
-import { GET_COMICS_TITLES } from '../queries/Query';
-import TarjetaComic from './Tarjetas/TarjetaComic';
+import { GET_ESCENAS } from '../queries/Query';
+import TarjetaEscena from './Tarjetas/TarjetaEscena';
 
-interface Comic {
+interface Event {
     title: string;
-    issue_number: number;
-    year: number;
-    description: string;
+    end: string;
+    start: string;
 }
   
-interface GetComicsData {
-  comics: Comic[];
+interface GetEscenasData {
+    event: Event[];
 }  
 
-function Comics() {
-    const { loading, error, data, refetch } = useQuery<GetComicsData>(GET_COMICS_TITLES);
+function Personajes() {
+    const { loading, error, data, refetch } = useQuery<GetEscenasData>(GET_ESCENAS);
     useEffect(() => {
       refetch();
     }, [refetch]);
   
-    
-    
     if (loading) return <p className="flex center justify-center align-middle bold text-4xl">Cargando...</p>;
     if (error) {
       console.error(error);
@@ -30,12 +27,13 @@ function Comics() {
   
     return (
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center items-center">
-        {data?.comics.map((comic) => (
-          <TarjetaComic key={comic.title} comic={comic} link={`/comic/${comic.title.replace(/\s/g, '_')}`} />
+        {data?.event.map((escena) => (
+          <TarjetaEscena key={escena.title} event={escena} link={`/escena/${escena.title.replace(/\s/g, '_')}`} />
         ))}
       </div>
     );
   }
   
+  
 
-export default Comics;
+export default Personajes;

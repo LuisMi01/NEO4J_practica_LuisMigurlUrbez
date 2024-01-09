@@ -89,6 +89,10 @@ type _Bloom_Scene_ {
 type Query {
   personaje: [Character!]!
   comic: [Comic]
+  escena: [Event]
+  personajeDetalle(name: String!): Character
+  escenaDetalle(title: String!): Event
+  comicDetalle(title: String!): Comic
 }
 
 

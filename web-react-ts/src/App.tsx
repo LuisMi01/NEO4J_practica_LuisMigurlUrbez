@@ -8,6 +8,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import DetalleComic from './components/detalles/DetalleComic';
 import DetallePersonaje from './components/detalles/DetallePersonaje';
 import Personajes from './components/Personajes'
+import DetalleEscena from './components/detalles/DetalleEscena';
+import Escena from './components/Escena'
 
 
 
@@ -31,6 +33,8 @@ function App() {
             <Route path="/comic/:title" element={<DetalleComic />} />
             <Route path="/personajes" element={<Personajes />} />
             <Route path="/personaje/:name" element={<DetallePersonaje />} />
+            <Route path="/escenas" element={<Escena />} />
+            <Route path="/personaje/:name" element={<DetalleEscena />} />
           </Routes>
         </Router>
       </ApolloProvider>

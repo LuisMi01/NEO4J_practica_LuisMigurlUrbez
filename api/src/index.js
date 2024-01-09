@@ -31,12 +31,43 @@ const resolvers = {
       session.close();
       return result.records.map(record => record.get('p').properties);
     },
-    comic: async (_parent, args, context, _info) => {
+    comic: async (_parent, _args, context, _info) => {
       const session = context.driver.session();
-      const query = 'MATCH (p:Comic) RETURN p';
+      const query = 'MATCH (c:Comic) RETURN c';
       const result = await session.run(query);
       session.close();
-      return result.records.map(record => record.get('p').properties);
+      return result.records.map(record => record.get('c').properties);
+    },
+    escena: async (_parent, _args, context, _info) => {
+      const session = context.driver.session();
+      const query = 'MATCH (b:Event) RETURN b';
+      const result = await session.run(query);
+      session.close();
+      return result.records.map(record => record.get('b').properties);
+    },
+    personajeDetalle: async (_parent, args, context, _info) => {
+      const session = context.driver.session();
+      const { name } = args;
+      const query = 'MATCH (l:Character { name: $name }) RETURN l';
+      const result = await session.run(query, { name });
+      session.close();
+      return result.records[0].get('l').properties;
+    },
+    escenaDetalle: async (_parent, args, context, _info) => {
+      const session = context.driver.session();
+      const { title } = args;
+      const query = 'MATCH (l:Event { title: $tile }) RETURN l';
+      const result = await session.run(query, { title });
+      session.close();
+      return result.records[0].get('l').properties;
+    },
+    escenaComic: async (_parent, args, context, _info) => {
+      const session = context.driver.session();
+      const { title } = args;
+      const query = 'MATCH (l:Comic { title: $tile }) RETURN l';
+      const result = await session.run(query, { title });
+      session.close();
+      return result.records[0].get('l').properties;
     },
   },
 };

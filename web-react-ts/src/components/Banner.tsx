@@ -1,7 +1,21 @@
 'use client'
 import '../App.css';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Banner() {
+
+  const [busqueda, setBusqueda] = useState('');
+  const navigate = useNavigate();;
+
+  const manejarCambio = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setBusqueda(event.target.value);
+  };
+
+  const manejarEnvio = (event: React.FormEvent) => {
+    event.preventDefault();
+    navigate(`/personaje/${busqueda.replace(/\s/g, '_')}`);
+  };
   
   return (
     <div className="grid grid-cols-3 grid-rows-1 p-5 bg-slate-gray">
@@ -23,9 +37,9 @@ function Banner() {
       </div>
 
       <div className="flex items-center justify-center ">
-        <form className="relative">
-          <input type="text" className="h-10 pl-8 pr-20 rounded-full z-0 focus:shadow focus:outline-none"
-                 placeholder="Busca tu superheroe..." />
+        <form className="relative" onSubmit={manejarEnvio}>
+          <input value={busqueda} onChange={manejarCambio}  type="text" className="h-10 pl-8 pr-20 rounded-full z-0 focus:shadow focus:outline-none"
+                 placeholder="Busca un personaje..." />
           <div className="absolute top-2 right-2">
             <button type='submit' className="h-6 w-6 text-gray-500">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
