@@ -20,7 +20,6 @@ type Character {
 
 type Comic {
   charactersAppearedIn: [Character!]!
-
   description: String
   id: String!
   issue_number: String!
@@ -86,3 +85,5 @@ type _Bloom_Scene_ {
   version: String!
   visualisation: String!
 }
+
+

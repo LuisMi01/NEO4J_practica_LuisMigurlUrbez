@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.12.1",
+    "@types/bonjour": "^3.5.13",
     "concurrently": "^8.2.2",
     "dotenv": "^8.6.0",
     "eslint": "^7.19.0",
