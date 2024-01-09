@@ -47,12 +47,12 @@ type Group {
 type Stats {
   charactersHasStats: [Character!]!
 
-  durability: BigInt!
-  energy: BigInt!
-  fighting_skills: BigInt!
-  intelligence: BigInt!
-  speed: BigInt!
-  strength: BigInt!
+  durability: String!
+  energy: String!
+  fighting_skills: String!
+  intelligence: String!
+  speed: String!
+  strength: String!
 }
 
 type _Bloom_Perspective_ {
@@ -68,16 +68,16 @@ type _Bloom_Perspective_ {
 type _Bloom_Scene_ {
   bloomPerspectiveSBloomHasScene: [_Bloom_Perspective_!]!
 
-  createdAt: BigInt!
+  createdAt: String!
   createdBy: String!
   filters: String!
   gds: String!
   id: String!
-  lastModified: BigInt!
+  lastModified: String!
   name: String!
   nodes: String!
-  numOfNodes: BigInt!
-  numOfRels: BigInt!
+  numOfNodes: String!
+  numOfRels: String!
   ranges: String!
   relationships: String!
   roles: [String]!
@@ -85,5 +85,11 @@ type _Bloom_Scene_ {
   version: String!
   visualisation: String!
 }
+
+type Query {
+  personaje: [Character!]!
+  comic: [Comic]
+}
+
 
 

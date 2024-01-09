@@ -15,13 +15,12 @@ interface GetPersonajeData {
     personaje: Personaje[];
 }  
 
-function Comics() {
+function Personajes() {
     const { loading, error, data, refetch } = useQuery<GetPersonajeData>(GET_PERSONAJES);
     useEffect(() => {
       refetch();
     }, [refetch]);
-    
-    
+  
     if (loading) return <p className="flex center justify-center align-middle bold text-4xl">Cargando...</p>;
     if (error) {
       console.error(error);
@@ -37,5 +36,6 @@ function Comics() {
     );
   }
   
+  
 
-export default Comics;
+export default Personajes;

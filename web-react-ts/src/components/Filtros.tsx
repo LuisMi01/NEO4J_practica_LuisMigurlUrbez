@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 function Filtros() {
     const history = useNavigate();
-    const [selected, setSelected] = useState('Comics');
+    const [selected, setSelected] = useState('');
   
     const handleSelection = (selection: string) => {
       setSelected(selection);

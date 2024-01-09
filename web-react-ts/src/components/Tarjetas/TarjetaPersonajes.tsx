@@ -22,12 +22,11 @@ const TarjetaComic: React.FC<TarjetaPersonajeProps> = ({ personaje, link }) => {
                 <h2 className="px-6 py-4 font-bold text-lg">{personaje.name}</h2>
                     <hr/>
                 <div className="px-6 py-4 flex-grow flex flex-col flex-start">
-                    <p className="text-gray-700 text-base">Alias: {personaje.aliases}</p>
                     <p className="text-gray-700 text-base">Identidad: {personaje.identity}</p>
                     <p className="text-gray-700 text-base">Educacion: {personaje.education}</p>
                     <p className="text-gray-700 text-base">Origen: {personaje.place_of_origin}</p>
                 </div>
-                <div className="flex flex-col space-y-2 p-2">
+                <div className="flex flex-col space-y-2 p-3">
                     <Link to={`/personaje/${personaje.name}`} className="transition-all duration-200 ease-in-out transform hover:scale-105">
                         <button
                             className="w-full bg-blue-500 text-white p-2 rounded shadow-md hover:shadow-lg transition cursor-pointer">Más información

@@ -11,7 +11,7 @@ interface Comic {
 }
   
 interface GetComicsData {
-comics: Comic[];
+  comics: Comic[];
 }  
 
 function Comics() {
@@ -30,7 +30,7 @@ function Comics() {
   
     return (
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center items-center">
-        {data?.comics.map((comic) => (
+        {data?.comics?.map((comic) => (
           <TarjetaComic key={comic.title} comic={comic} link={`/comic/${comic.title.replace(/\s/g, '_')}`} />
         ))}
       </div>

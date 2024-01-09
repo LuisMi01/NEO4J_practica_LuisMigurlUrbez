@@ -3,7 +3,7 @@ import { gql } from '@apollo/client';
 
 export const GET_COMICS_TITLES = gql`
     query GetComicsTitles {
-        comics {
+        comic {
             title
             issue_number
             year
@@ -13,7 +13,7 @@ export const GET_COMICS_TITLES = gql`
 
 export const GET_PERSONAJES = gql`
     query GetPersonajes{
-        characters{
+        personaje{
             name
             aliases
             identity

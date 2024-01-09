@@ -6,6 +6,8 @@ import Comics from './components/Comics';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import DetalleComic from './components/detalles/DetalleComic';
+import DetallePersonaje from './components/detalles/DetallePersonaje';
+import Personajes from './components/Personajes'
 
 
 
@@ -27,6 +29,8 @@ function App() {
           <Routes>
             <Route path="/comics" element={<Comics />} />
             <Route path="/comic/:title" element={<DetalleComic />} />
+            <Route path="/personajes" element={<Personajes />} />
+            <Route path="/personaje/:name" element={<DetallePersonaje />} />
           </Routes>
         </Router>
       </ApolloProvider>

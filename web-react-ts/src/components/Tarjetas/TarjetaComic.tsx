@@ -25,7 +25,7 @@ const TarjetaComic: React.FC<TarjetaComicProps> = ({ comic, link }) => {
                     <p className="text-gray-700 text-base">Número serial: {comic.issue_number}</p>
                     <p className="text-gray-700 text-base">Año: {comic.year}</p>
                 </div>
-                <div className="flex flex-col space-y-2 p-2">
+                <div className="flex flex-col space-y-2 p-3">
                     <Link to={`/comic/${comic.title}`} className="transition-all duration-200 ease-in-out transform hover:scale-105">
                         <button
                             className="w-full bg-blue-500 text-white p-2 rounded shadow-md hover:shadow-lg transition cursor-pointer">Más información
