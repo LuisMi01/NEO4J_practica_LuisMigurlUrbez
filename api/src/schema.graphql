@@ -5,7 +5,7 @@ type Character {
   charactersAlly: [Character!]! 
   charactersEnemy: [Character!]! 
   charactersRelative: [Character!]!
- 
+
   education: String!
   enemyCharacters: [Character!]! 
   hasStatsStats: [Stats!]! 
@@ -13,12 +13,9 @@ type Character {
   identity: String!
   name: String!
   partOfEventEvents: [Event!]!
-
   partOfGroupGroups: [Group!]!
-
   place_of_origin: String!
   relativeCharacters: [Character!]!
-
 }
 
 type Comic {
