@@ -1,16 +1,33 @@
 'use client'
 import './App.css';
 import Banner from './components/Banner';
-import Filtros from './components/Filtros';
+import Filtros from './components/Filtros'
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import DetalleComic from './components/detalles/DetalleComic';
+
+
+
+// Crea un cliente Apollo
+const client = new ApolloClient({
+  uri: 'http://localhost:4001/graphql', //esto por ahora funciona en local, si quiero usarlo en server hay que cambiarlo
+  cache: new InMemoryCache()
+});
+
 
 function App() {
-  
   return (
     <div className="bg-robin-egg-blue min-h-screen">
       
-       <Banner/>
-       <Filtros/>
-         
+       <ApolloProvider client={client}>
+        <Router>
+          <Banner/>
+          <Filtros/>
+          <Routes>
+            <Route path="/comic/:title" element={<DetalleComic />} />
+          </Routes>
+        </Router>
+      </ApolloProvider>
     </div>
   );
 }

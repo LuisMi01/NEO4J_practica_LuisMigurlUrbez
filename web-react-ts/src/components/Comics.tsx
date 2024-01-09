@@ -9,11 +9,10 @@ interface Comic {
     year: number;
     description: string;
 }
-
   
-  interface GetComicsData {
-    comics: Comic[];
-  }
+interface GetComicsData {
+comics: Comic[];
+}  
 
 function Comics() {
     const { loading, error, data, refetch } = useQuery<GetComicsData>(GET_COMICS_TITLES);
