@@ -1,0 +1,91 @@
+type Character {
+  aliases: String!
+  allyCharacters: [Character!]!
+  appearedInComics: [Comic!]! 
+  charactersAlly: [Character!]! 
+  charactersEnemy: [Character!]! 
+  charactersRelative: [Character!]!
+ 
+  education: String!
+  enemyCharacters: [Character!]! 
+  hasStatsStats: [Stats!]! 
+  id: String!
+  identity: String!
+  name: String!
+  partOfEventEvents: [Event!]!
+
+  partOfGroupGroups: [Group!]!
+
+  place_of_origin: String!
+  relativeCharacters: [Character!]!
+
+}
+
+type Comic {
+  charactersAppearedIn: [Character!]!
+
+  description: String
+  id: String!
+  issue_number: String!
+  title: String!
+  year: String
+}
+
+type Event {
+  charactersPartOfEvent: [Character!]!
+
+  description: String!
+  end: String!
+  id: String!
+  start: String!
+  title: String!
+}
+
+type Group {
+  base: String!
+  charactersPartOfGroup: [Character!]!
+  id: String!
+  name: String!
+}
+
+type Stats {
+  charactersHasStats: [Character!]!
+
+  durability: BigInt!
+  energy: BigInt!
+  fighting_skills: BigInt!
+  intelligence: BigInt!
+  speed: BigInt!
+  strength: BigInt!
+}
+
+type _Bloom_Perspective_ {
+  bloomHasSceneBloomSceneS: [_Bloom_Scene_!]!
+   
+  data: String!
+  id: String!
+  name: String!
+  roles: [String]!
+  version: String!
+}
+
+type _Bloom_Scene_ {
+  bloomPerspectiveSBloomHasScene: [_Bloom_Perspective_!]!
+
+  createdAt: BigInt!
+  createdBy: String!
+  filters: String!
+  gds: String!
+  id: String!
+  lastModified: BigInt!
+  name: String!
+  nodes: String!
+  numOfNodes: BigInt!
+  numOfRels: BigInt!
+  ranges: String!
+  relationships: String!
+  roles: [String]!
+  style: String!
+  version: String!
+  visualisation: String!
+}
