@@ -2,6 +2,7 @@
 import './App.css';
 import Banner from './components/Banner';
 import Filtros from './components/Filtros'
+import Comics from './components/Comics';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import DetalleComic from './components/detalles/DetalleComic';
@@ -24,6 +25,7 @@ function App() {
           <Banner/>
           <Filtros/>
           <Routes>
+            <Route path="/comics" element={<Comics />} />
             <Route path="/comic/:title" element={<DetalleComic />} />
           </Routes>
         </Router>

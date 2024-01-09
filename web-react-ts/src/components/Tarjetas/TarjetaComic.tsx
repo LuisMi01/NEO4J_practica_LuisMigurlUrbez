@@ -20,13 +20,13 @@ const TarjetaComic: React.FC<TarjetaComicProps> = ({ comic, link }) => {
         <div className="m-4 transition-all duration-200 ease-in-out transform hover:scale-105">
             <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white w-70 h-80 flex flex-col">
                 <div className="px-6 py-4 flex-grow flex flex-col justify-between">
-                    <h2 className="font-bold text-lg mb-2">{comic.title}</h2>
+                    <h2 className="font-bold text-lg">{comic.title}</h2>
                     <hr/>
-                    <p className="text-gray-700 text-base">Issue Number: {comic.issue_number}</p>
-                    <p className="text-gray-700 text-base">Year: {comic.year}</p>
-                    <p className="text-gray-700 text-base">Description: {comic.description}</p>
+                    <p className="text-gray-700 text-base">Número serial: {comic.issue_number}</p>
+                    <p className="text-gray-700 text-base">Año: {comic.year}</p>
+                    <p className="text-gray-700 text-base">Descripción: {comic.description}</p>
                 </div>
-                <div className="flex flex-col space-y-2">
+                <div className="flex flex-col space-y-2 pb-2">
                     <Link to={`/comic/${comic.title}`} className="transition-all duration-200 ease-in-out transform hover:scale-105">
                         <button
                             className="w-full bg-blue-500 text-white p-2 rounded shadow-md hover:shadow-lg transition cursor-pointer">Más información
