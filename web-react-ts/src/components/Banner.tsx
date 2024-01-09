@@ -2,6 +2,7 @@
 import '../App.css';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Banner() {
 
@@ -52,7 +53,11 @@ function Banner() {
       </div>
 
       <div className="flex justify-end">
-        menu
+      <Link to={`http://localhost:4001/graphql`} target='_blank' className="transition-all duration-200 ease-in-out transform hover:scale-105">
+            <button
+              className="w-full bg-green-500 text-white p-2 rounded shadow-md hover:shadow-xl transition cursor-pointer">¡Consulta la API!
+            </button>
+      </Link>
     </div>
     </div>
   );

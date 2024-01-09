@@ -61,7 +61,7 @@ const resolvers = {
       session.close();
       return result.records[0].get('l').properties;
     },
-    escenaComic: async (_parent, args, context, _info) => {
+    comicDetalle: async (_parent, args, context, _info) => {
       const session = context.driver.session();
       const { title } = args;
       const query = 'MATCH (l:Comic { title: $tile }) RETURN l';

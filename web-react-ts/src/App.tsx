@@ -10,6 +10,7 @@ import DetallePersonaje from './components/detalles/DetallePersonaje';
 import Personajes from './components/Personajes'
 import DetalleEscena from './components/detalles/DetalleEscena';
 import Escena from './components/Escena'
+import Principal from './components/Principal';
 
 
 
@@ -35,6 +36,8 @@ function App() {
             <Route path="/personaje/:name" element={<DetallePersonaje />} />
             <Route path="/escenas" element={<Escena />} />
             <Route path="/personaje/:name" element={<DetalleEscena />} />
+            <Route path="/" element={<Principal />} />
+            
           </Routes>
         </Router>
       </ApolloProvider>
