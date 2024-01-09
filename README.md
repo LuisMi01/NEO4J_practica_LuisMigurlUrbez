@@ -1,5 +1,8 @@
 # NEO4J_practica_LuisMigurlUrbez
 
+**La explicación de la inicialización de este proyecto con GRAND Stack puede encontrarse en mi otro repositorio público GraphQL_Luis Miguel Urbez, junto con la documentacion de la misma.**
+
+## Enlaces interesantes
 **sandbox de neo4j** https://sandbox.neo4j.com
 
 **banco de pruebas** https://workspace-preview.neo4j.io/workspace/explore
