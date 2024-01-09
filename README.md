@@ -2,6 +2,8 @@
 
 **sandbox de neo4j** https://sandbox.neo4j.com
 
+**banco de pruebas* https://workspace-preview.neo4j.io/workspace/explore
+
 **Inicializacion de la API con NEO4J**
 [https://sandbox.neo4j.com](https://sandbox.neo4j.com)https://sandbox.neo4j.com
 
