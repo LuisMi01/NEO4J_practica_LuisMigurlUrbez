@@ -23,10 +23,9 @@ function Banner() {
       </div>
 
       <div className="flex items-center justify-center ">
-      <div className="flex items-center justify-center ">
-        <form className="relative" onSubmit={manejarEnvio}>
-          <input value={busqueda} onChange={manejarCambio}  type="text" className="h-10 pl-8 pr-20 rounded-full z-0 focus:shadow focus:outline-none"
-                 placeholder="Busca un libro..." />
+        <form className="relative">
+          <input type="text" className="h-10 pl-8 pr-20 rounded-full z-0 focus:shadow focus:outline-none"
+                 placeholder="Busca tu superheroe..." />
           <div className="absolute top-2 right-2">
             <button type='submit' className="h-6 w-6 text-gray-500">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -37,7 +36,6 @@ function Banner() {
           </div>
         </form>
       </div>
-        </div>
 
       <div className="flex justify-end">
         menu
